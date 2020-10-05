@@ -7,6 +7,10 @@ h2, h3, h4, h5{
   border: 3px solid black;
 }
 
+tbody tr:nth-child(even){
+  background-color: lightgray;
+}
+
 thead{
   font-weight: bold;
   color: lightblue;
@@ -32,16 +36,44 @@ a:hover{
 }
 
 #teamRoster > li:first-child{
+  display: block;
+  position: relative;
+}
+
+#teamRoster>li:first-child::after{
+  content: "";
   background-image: url(https://upload.wikimedia.org/wikipedia/en/4/44/Denver_Broncos_logo.svg);
-  background-size: contain;
   background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
 }
 
 #teamRoster > li:last-child{
-  background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/5c/Chicago_Bears_logo.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
+  display: block;
+  position: relative;
 }
+
+#teamRoster>li:last-child::after{
+  content: "";
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/5c/Chicago_Bears_logo.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+
 
 blockquote{
   background-color: darkgray;
